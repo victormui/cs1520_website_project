@@ -1,0 +1,58 @@
+<html>
+    <title>
+        Pitt Munchies Home
+    </title>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="#home" class="active">Home</a>
+        <div class="dropdown">
+          <button class="dropbtn">My Account
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="#">Reviews</a>
+            <a href="#">Recents</a>
+            <a href="#">Favorites</a>
+            <a href="#">Settings</a>
+          </div>
+        </div>
+        <div class="search">
+         <form class="nav" action="/action_page.php" style="margin:auto;max-width:800px">
+            <input type="text" placeholder="Search..." name="search">
+          <button type="submit"><i class="fa fa-search"></i></button>
+         </form>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="dropFunction()">&#9776;</a>
+      </div>
+
+    <div class="dropdown">
+        <button onclick="dropFunction()" class="dropbtn"></button>
+    </div>
+
+    <script>
+        /* When the user clicks on the button,
+        toggle between hiding and showing the dropdown content */
+    function dropFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown menu if the user clicks outside of it
+    window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                 }
+            }
+        }
+    }
+    </script>
+</body>
+</html>
