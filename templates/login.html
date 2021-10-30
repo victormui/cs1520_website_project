@@ -1,32 +1,35 @@
-<html>
+
+{% extends "_base.html" %}
+{% block content %}
 <head>
-    <title>Login And Signup</title>
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="/s/login.css">
 </head>
 <body>
-    <div class="hero">
+<div class="hero">
 <div class="form-box">
     <div class="button-box">
         <div id="btn"></div>
         <button type="button" class="toggle-btn" onclick="login()">Log In</button>
         <button type="button" class="toggle-btn" onclick="register()">Register</button>
     </div>
-    <form id="login" class="input-group">
-        <input type="text" class="input-field" placeholder="User Id" required>
-        <input type="text" class="input-field" placeholder="Enter Password" required>
-        <button type="submit" class="submit-btn">Log in</button>
+    <form method="POST" action="/login" id="login" class="input-group">
+        <input name="username" type="text" class="input-field" placeholder="Enter Username" required>
+        <input name="password" type="text" class="input-field" placeholder="Enter Password" required>
+        <button type="submit" class="submit-btn">Log In</button>
     </form>
-    <form id="register" class="input-group">
-        <input type="text" class="input-field" placeholder="User Id" required>
-        <input type="email" class="input-field" placeholder="Email Id" required>
-        <input type="text" class="input-field" placeholder="Enter Password" required>
+    
+    <form method="POST" action="/sign_up" id="register" class="input-group">
+        <input name="username" type="text" class="input-field" placeholder="Enter Username" required>
+        <input name="email" type="email" class="input-field" placeholder="Enter E-Mail" required>
+        <input name="password" type="text" class="input-field" placeholder="Enter Password" required>
         <button type="submit" class="submit-btn">Register</button>
     </form>
 </div>
-        
-    </div>
-    
-    <script>
+    <p>{% if page_error %} {{page_error}} {% endif %}</p>
+
+    <p>{% if page_success %} {{page_success}} {% endif %} </p>
+</div>
+<script>
     var x = document.getElementById("login");
     var y = document.getElementById("register");
     var z = document.getElementById("btn");
@@ -43,7 +46,9 @@
     }
     
     
-    </script>
+ </script>
+    
     
 </body>
-</html>
+{% endblock %}
+
