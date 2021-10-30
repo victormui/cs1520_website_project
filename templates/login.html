@@ -1,10 +1,6 @@
 
 {% extends "_base.html" %}
 {% block content %}
-<head>
-    <link rel="stylesheet" href="/s/login.css">
-</head>
-<body>
 <div class="hero">
 <div class="form-box">
     <div class="button-box">
@@ -12,6 +8,8 @@
         <button type="button" class="toggle-btn" onclick="login()">Log In</button>
         <button type="button" class="toggle-btn" onclick="register()">Register</button>
     </div>
+
+    
     <form method="POST" action="/login" id="login" class="input-group">
         <input name="username" type="text" class="input-field" placeholder="Enter Username" required>
         <input name="password" type="text" class="input-field" placeholder="Enter Password" required>
@@ -24,11 +22,12 @@
         <input name="password" type="text" class="input-field" placeholder="Enter Password" required>
         <button type="submit" class="submit-btn">Register</button>
     </form>
-</div>
     <p>{% if page_error %} {{page_error}} {% endif %}</p>
 
     <p>{% if page_success %} {{page_success}} {% endif %} </p>
 </div>
+</div>
+
 <script>
     var x = document.getElementById("login");
     var y = document.getElementById("register");
@@ -44,11 +43,7 @@
         y.style.left = "450px";
         z.style.left = "0";
     }
-    
-    
  </script>
-    
-    
-</body>
+
 {% endblock %}
 

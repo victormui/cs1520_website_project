@@ -63,10 +63,7 @@ class UserManager():
                 return True
         return False
 
-
-
-    
-    
+ 
     def user_to_entity(self, user):
         client = get_client()
         key_user = client.key('Test1')
