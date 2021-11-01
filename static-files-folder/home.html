@@ -10,10 +10,10 @@
     <div class="topnav" id="myTopnav">
         <a href="#home" class="active">Home</a>
         <div class="dropdown">
-          <button class="dropbtn">My Account
-            <i class="fa fa-caret-down"></i>
-          </button>
-          <div class="dropdown-content">
+         <button onclick="dropFunction()" class="dropbtn">
+                My Account<i class="fa fa-caret-down"></i>
+              </button>
+          <div id="myDropdown" class="dropdown-content">
             <a href="#">Reviews</a>
             <a href="#">Recents</a>
             <a href="#">Favorites</a>
@@ -28,10 +28,6 @@
         </div>
         <a href="javascript:void(0);" class="icon" onclick="dropFunction()">&#9776;</a>
       </div>
-
-    <div class="dropdown">
-        <button onclick="dropFunction()" class="dropbtn"></button>
-    </div>
 
     <script>
         /* When the user clicks on the button,
@@ -53,6 +49,27 @@
             }
         }
     }
+
+
     </script>
+    <section>
+        <br></br><br></br>
+        <h2>My Recents</h2>
+    </section>
+    <div class="recents">
+     <section>
+        <p>This is a list of my recent restuarant visits</p>
+     </section>
+    </div>
+
+    <section>
+        <h2>Favorites</h2>
+    </section>
+    <div class="favs">
+     <section>
+        <p>This is a list of my favorite restuarants</p>
+     </section>
+    </div>
+    
 </body>
 </html>
