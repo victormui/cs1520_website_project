@@ -145,6 +145,7 @@
   overflow-y: auto;
   height: 200px;
   width: 250px;
+  width: 100%;
 }
 .recents p{
   color: #2196F3;
@@ -164,4 +165,19 @@
 h2{
   margin-left:15%;
   color: gold;
+}
+
+.half-row img{
+  margin-right:15%;
+}
+
+
+.half-row{
+  display: inline-block;
+  width: 48%;
+  float: left;
+}
+
+.clear{
+  clear: both;
 }
