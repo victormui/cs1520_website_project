@@ -9,11 +9,11 @@
   font-size: 17px;
   border: 1px solid gold;
   float: left;
-  width: 70%;
+  width: 75%;
   background: white;
 }
 /* Style the submit button */
-.nav button {
+.search button {
   float: center;
   width: 10%;
   padding: 15.5px;
@@ -50,7 +50,7 @@
   display: block;
   color: #f2f2f2;
   text-align: center;
-  padding: 14px 16px;
+  padding: 14px 20px;
   text-decoration: none;
   font-size: 17px;
 }
@@ -68,7 +68,7 @@
 
 /* Dropdown container - needed to position the dropdown content */
 .dropdown {
-  float: left;
+  float: right;
   overflow: hidden;
 }
 
@@ -144,8 +144,7 @@
   margin-left:15%;
   overflow-y: auto;
   height: 200px;
-  width: 250px;
-  width: 100%;
+  width: 350px;
 }
 .recents p{
   color: #2196F3;
@@ -155,29 +154,21 @@
   margin-left:15%;
   overflow-y: auto;
   height: 200px;
-  width: 250px;
+  width: 350px;
+
 }
 
 .favs p{
   color: #2196F3;
 }
 
-h2{
+.home h2{
   margin-left:15%;
   color: gold;
-}
-
-.half-row img{
-  margin-right:15%;
-}
-
-
-.half-row{
-  display: inline-block;
-  width: 48%;
-  float: left;
 }
 
 .clear{
   clear: both;
 }
+
+.floatRight{float:right;margin-right:80px}
