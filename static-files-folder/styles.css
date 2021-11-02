@@ -1,13 +1,16 @@
+*{
+    font-family: sans-serif;
+}
 /* Add a black background color to the top navigation */
 .topnav {
-  background-color: #2196F3;
+  background-color: #003594;
   overflow: hidden;
 }
 
 .nav input[type=text]{
   padding: 13px;
   font-size: 17px;
-  border: 1px solid gold;
+  border: 1px #003594;
   float: left;
   width: 75%;
   background: white;
@@ -17,7 +20,7 @@
   float: center;
   width: 10%;
   padding: 15.5px;
-  background: gold;
+  background: #FFB81C;
   color: white;
   font-size: 17px;
   border: none;
@@ -26,7 +29,7 @@
 }
 
 .nav button:hover {
-  background: #0b7dda;
+  background: #FFB81C;
 }
 /* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
 @media screen and (max-width: 600px) {
@@ -57,7 +60,7 @@
 
 /* Add an active class to highlight the current page */
 .active {
-  background-color: gold;
+  background-color: #003594;
   color: white;
 }
 
@@ -88,7 +91,7 @@
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
+  background-color: #FFB81C;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
@@ -106,14 +109,14 @@
 
 /* Add a dark background on topnav links and the dropdown button on hover */
 .topnav a:hover, .dropdown:hover .dropbtn {
-  background-color: #0b7dda;
+  background-color: ##1155ff;
   color: white;
 }
 
 /* Add a grey background to dropdown links on hover */
 .dropdown-content a:hover {
   background-color: #ddd;
-  color: #2196F3;
+  color: #003594;
 }
 .show {display:block;}
 
@@ -147,7 +150,7 @@
   width: 350px;
 }
 .recents p{
-  color: #2196F3;
+  color: #FFB81C;
 }
 
 .favs{
@@ -159,12 +162,12 @@
 }
 
 .favs p{
-  color: #2196F3;
+  color: #FFB81C;
 }
 
 .home h2{
   margin-left:15%;
-  color: gold;
+  color: #003594;
 }
 
 .clear{
