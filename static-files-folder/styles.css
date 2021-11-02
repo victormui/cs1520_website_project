@@ -115,7 +115,7 @@
 
 /* Add a grey background to dropdown links on hover */
 .dropdown-content a:hover {
-  background-color: #ddd;
+  background-color: white;
   color: #003594;
 }
 .show {display:block;}
