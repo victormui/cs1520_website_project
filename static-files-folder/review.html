@@ -24,7 +24,6 @@
 
 </head>
 <body>
-
   <div class="container">
     <div class="row">
       <div class="col-12 col-sm-50 col-lg-100">
@@ -104,6 +103,7 @@
       </div>
     </div>
   </div>
+  <br></br>
 <h4> Add Review </h4>
 <style>
 { padding: 36px; }
@@ -152,6 +152,7 @@ h4 {text-align: center;}
 
       <div class="stars text-center">
       <div class="col-md-12">
+          <p><b>Rating</b></p>
           <div class="form-group">
 
             <input type="radio" id="five" name="rate" value="5">
@@ -172,16 +173,22 @@ h4 {text-align: center;}
       </div>
       <div class="col-md-6">
         <div class="form-group">
-          <label for="textarea"><b>Review</b></label>
-
-          <textarea class="form-control" id="textarea" rows="4" placeholder="Add your review..."></textarea>
+          <p style="margin-left:20%;"><b>Review</b></p>
+          <textarea type="text" id="userReview" placeholder="Add your review..." style="height:100px; width:250px;"></textarea>
         </div>
       </div>
       <div class="col-md-12 text-right">
-        <input type="submit" class="btn btn-primary" value="Review">
+        <button class="btn btn-primary" onclick="returnReview()">Review</button>
       </div>
   </div>
 </div>
+
+  <script>
+      function returnReview(){
+        let input = document.getElementById("userReview").value;
+      }
+  </script>
+<br></br><br></br>
 
 </body>
 </html>

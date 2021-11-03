@@ -8,7 +8,7 @@
 }
 
 .nav input[type=text]{
-  padding: 13px;
+  padding: 14px;
   font-size: 17px;
   border: 1px #003594;
   float: left;
@@ -29,7 +29,7 @@
 }
 
 .nav button:hover {
-  background: #FFB81C;
+  background: #003594;
 }
 /* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
 @media screen and (max-width: 600px) {
@@ -109,7 +109,7 @@
 
 /* Add a dark background on topnav links and the dropdown button on hover */
 .topnav a:hover, .dropdown:hover .dropbtn {
-  background-color: ##1155ff;
+  background-color: #FFB81C;
   color: white;
 }
 
@@ -195,6 +195,10 @@
   margin: 0; /* Remove margins */
 }
 
+.container1 a{
+  display: inline;
+}
+
 .container2 {
   margin-top:0;
   float:center;
@@ -215,7 +219,7 @@
 }
 
 .container3{
-  margin-top:0;
+  margin-top:-356;
   float:right;
   margin-right: 0;
   margin-left: 70%;
@@ -232,4 +236,37 @@
     list-style-type: none; /* Remove bullets */
     padding: 0; /* Remove padding */
     margin: 0; /* Remove margins */
+  }
+  
+  #listRest{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  #listRest li a{
+    border: 1px solid #ddd; /* Add a border to all links */
+    margin-top: -1px; /* Prevent double borders */
+    background-color: #f6f6f6; /* Grey background color */
+    padding: 12px; /* Add some padding */
+    text-decoration: none; /* Remove default text underline */
+    font-size: 18px; /* Increase the font-size */
+    color: black; /* Add a black text color */
+    display: block; /* Make it into a block element to fill the whole list */    
+  }
+
+  #listRest li a:hover:not(.header) {
+    background-color: #eee; /* Add a hover effect to all links, except for headers */
+  }
+  
+  .food{
+    display:none;
+  }
+
+  hr{
+    width: 100%;
+    margin-left:auto;
+    margin-right: auto;
+    height: 60px;
+    background-color:#003594;
   }
