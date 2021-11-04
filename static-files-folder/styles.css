@@ -176,11 +176,25 @@
 
 .floatRight{float:right;margin-right:80px}
 
+.button
+{
+  background-color: #003594;
+  color: white;
+  border: 2px solid #FFB81C;
+  border-radius: 12px;
+  padding: 6px 22px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+}
+
 .container1 {
   margin-top:36;
   float:left;
   margin-left: 0;
-  border-color: gold;
+  border-color: #FFB81C;
+  border-radius: 12px;
   color:black;
   width: 30%;
   height: 50%;
@@ -203,7 +217,8 @@
   margin-top:0;
   float:center;
   margin-left: 35%;
-  border-color: gold;
+  border-color: #FFB81C;
+  border-radius: 12px;
   color:black;
   width: 30%;
   height: 50%;
@@ -223,7 +238,8 @@
   float:right;
   margin-right: 0;
   margin-left: 70%;
-  border-color: gold;
+  border-color: #FFB81C;
+  border-radius: 12px;
   color:black;
   width: 30%;
   height: 50%;
