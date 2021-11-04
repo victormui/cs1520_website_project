@@ -1,0 +1,211 @@
+{% extends "_base.html" %}
+{% block content %}
+<head>
+  <title>Add a review</title>
+  <h4> All Reviews </h4>
+  <style>
+  h4 {text-align: center;}
+  </style>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- My Stylesheet -->
+    <link rel="stylesheet" href="/s/review.css">
+
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-sm-50 col-lg-100">
+        <ul class="list-group">
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Chipotle
+            <div class="image-parent">
+                <img src="/s/Chipotle-logo.png" class="img-fluid" alt="quixote" style="width:170px;height:100px;">
+                {% for review in chipotle %}
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <p>Review by: {{ review['user'] }}</p>
+                    <p>Order: {{ review['order'] }}</p>
+                    <p>Review: {{ review['text'] }}</p>
+                    <p>Wait Time: {{ review['wait'] }}</p>
+                    <p>Rating: {{ review['stars'] }}</p>
+                    
+                </li>
+                {% endfor %}
+            </div>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Five Guys
+            <div class="image-parent">
+                <img src="/s/five-guys-logo.png" class="img-fluid" alt="lay" style="width:150px;height:100px;">
+                {% for review in five_guys %}
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <p>Review by: {{ review['user'] }}</p>
+                    <p>Order: {{ review['order'] }}</p>
+                    <p>Review: {{ review['text'] }}</p>
+                    <p>Wait Time: {{ review['wait'] }}</p>
+                    <p>Rating: {{ review['stars'] }}</p>
+                    
+                </li>
+                {% endfor %}
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Noodles and Company
+            <div class="image-parent">
+                <img src="/s/noodles_logo.jpeg" class="img-fluid" alt="things" style="width:100px;height:100px;">
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Roots
+            <div class="image-parent">
+                <img src="/s/roots_logo.png" class="img-fluid" alt="things" style="width:120px;height:100px;">
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Primanti Bros. Restaurant and Bar
+            <div class="image-parent">
+                <img src="/s/primantis_logo.png" class="img-fluid" alt="things" style="width:100px;height:100px;">
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            The Porch at Schenley
+            <div class="image-parent">
+                <img src="/s/porch_logo.jpeg" class="img-fluid" alt="things" style="width:100px;height:100px;">
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Chikn
+            <div class="image-parent">
+                <img src="/s/CHiKN_Logo.png" class="img-fluid" alt="things" style="width:100px;height:100px;">
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Piada Italian Street Food
+            <div class="image-parent">
+                <img src="/s/piada_logo.jpeg" class="img-fluid" alt="things" style="width:100px;height:100px;">
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Mcdonalds
+            <div class="image-parent">
+                <img src="/s/McDonalds-logo.png" class="img-fluid" alt="things" style="width:100px;height:100px;">
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Subway
+            <div class="image-parent">
+                <img src="/s/subway-logo.png" class="img-fluid" alt="things" style="width:100px;height:100px;">
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Stack'd Oakland
+            <div class="image-parent">
+                <img src="/s/stackd-logo.png" class="img-fluid" alt="things" style="width:100px;height:100px;">
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Oishii Bento
+            <div class="image-parent">
+                <img src="/s/oishi-logo.png" class="img-fluid" alt="things" style="width:130px;height:100px;">
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Fuel and Fuddle
+            <div class="image-parent">
+                <img src="/s/fuelfuddle-sitelogo.png" class="img-fluid" alt="things" style="width:130px;height:100px;">
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            Hello Bistro
+            <div class="image-parent">
+                <img src="/s/hellobistro.png" class="img-fluid" alt="things" style="width:170px;height:100px;">
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <br></br>
+<h4> Add Review </h4>
+<style>
+{ padding: 36px; }
+h4 {text-align: center;}
+</style>
+  <form method="POST" action="/add_review">
+    <div class="form-group">
+        <div class="col-9 col-sm-100 col-lg-100">
+        <label for="restaurantname">Restaurant Name</label>
+        <select class="form-control" name = "restaurant" id="restaurantname">
+          <option>Roots</option>
+          <option>Primanti Bros. Restaurant and Bar</option>
+          <option>The Porch at Schenley</option>
+          <option>Chipotle</option>
+          <option>Pamela's Diner</option>
+          <option>Oishii Bento</option>
+          <option>Five Guys</option>
+          <option>Noodles and Company</option>
+          <option>ChiKn</option>
+          <option>Piada Italian Street Food</option>
+          <option>McDonalds</option>
+          <option>Subway</option>
+          <option>Stack'd Oakland</option>
+          <option>Fuel and Fuddle</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <div class="col-9 col-sm-100 col-lg-100">
+        <label for="order">Food Order</label>
+        <input type="text" name = "order" class="form-control" id="order" placeholder="What did you order?">
+      </div>
+      <div class="form-group">
+        <div class="col-9 col-sm-100 col-lg-100">
+        <label for="time">Wait Time</label>
+        <input type="text" name="wait" class="form-control" id="time" placeholder="How long did you wait?">
+      </div>
+      <div class="form-group">
+        <div class="col-9 col-sm-100 col-lg-100">
+        <label for="review">Review</label>
+        <input type="text" name = "user_review" class="form-control" id="review" placeholder="Additional comments?">
+      </div>
+      <div class="form-group form-check">
+        <div class="col-9 col-sm-100 col-lg-100">
+        <input type="checkbox" class="form-check-input" id="AddFavorites">
+        <label class="form-check-label" for="AddFavorites">Add to Favorites</label>
+      </div>
+    </form>
+    
+    <div class="container p-3">
+      <div class="row">
+    
+          <div class="stars text-center">
+          <div class="col-md-12">
+              <p><b>Rating</b></p>
+              <div class="form-group">
+    
+                <input type="radio" id="five" name="rate" value="5">
+                <label for="five"></label>
+                <input type="radio" id="four" name="rate" value="4">
+                <label for="four"></label>
+                <input type="radio" id="three" name="rate" value="3">
+                <label for="three"></label>
+                <input type="radio" id="two" name="rate" value="2">
+                <label for="two"></label>
+                <input type="radio" id="one" name="rate" value="1">
+                <label for="one"></label>
+    
+                <span class="result"></span>
+    
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 text-right">
+            <button class="btn btn-primary">Review</button>
+          </div>
+      </div>
+    </div>
+    
+
+    </form>
+
+<br></br><br></br>
+
+</body>
+{% endblock %}
