@@ -66,7 +66,7 @@ class UserManager():
  
     def user_to_entity(self, user):
         client = get_client()
-        key_user = client.key('Test1')
+        key_user = client.key('Test1') 
 
         user_store = datastore.Entity(key = key_user)
         user_store["username"] = user.get_username()

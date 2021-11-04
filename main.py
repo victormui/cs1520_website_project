@@ -65,7 +65,7 @@ def render_reviews():
     #Primanti Bros
     primanti = review_m.reviews_filter_restaurant("Primanti Bros. Restaurant and Bar")
     #The Porch
-    porch = review_m.reviews_filter_restaurant("The Porch at Schenley")
+    the_porch = review_m.reviews_filter_restaurant("The Porch at Schenley")
     #Chikn
     chikn = review_m.reviews_filter_restaurant("ChiKn")
     #Piada
@@ -81,9 +81,12 @@ def render_reviews():
     #Fuel and fuddle
     f_n_f = review_m.reviews_filter_restaurant("Fuel and Fuddle")
     #hello bistro
-    h_bistro = review_m.reviews_filter_restaurant("Hello Bistro")
+    hello_bistro = review_m.reviews_filter_restaurant("Hello Bistro")
 
-    return flask.render_template('review.html', chipotle = chipotle, five_guys = five_guys)
+    return flask.render_template('review.html', chipotle = chipotle, five_guys = five_guys, 
+    noodles_n_co = noodles_n_co, roots = roots, primanti = primanti, the_porch = the_porch, 
+    chikn = chikn, piada = piada, mcdonalds = mcdonalds, subway = subway, stackd = stackd,
+    oishii = oishii, f_n_f = f_n_f, hello_bistro = hello_bistro)
 
 @app.route("/home", methods=['GET', 'POST'])
 def home_page():

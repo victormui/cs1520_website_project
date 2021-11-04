@@ -29,10 +29,11 @@
       <div class="col-12 col-sm-50 col-lg-100">
         <ul class="list-group">
           <li class="list-group-item d-flex justify-content-between align-items-center">
-            Chipotle
+            <b>Chipotle</b>
             <div class="image-parent">
                 <img src="/s/Chipotle-logo.png" class="img-fluid" alt="quixote" style="width:170px;height:100px;">
-                {% for review in chipotle %}
+            </div>
+            {% for review in chipotle %}
                 <li class="list-group-item d-flex justify-content-between align-items-center">
                     <p>Review by: {{ review['user'] }}</p>
                     <p>Order: {{ review['order'] }}</p>
@@ -41,13 +42,13 @@
                     <p>Rating: {{ review['stars'] }}</p>
                     
                 </li>
-                {% endfor %}
-            </div>
+            {% endfor %}
           </li>
           <li class="list-group-item d-flex justify-content-between align-items-center">
-            Five Guys
+            <b>Five Guys</b>
             <div class="image-parent">
                 <img src="/s/five-guys-logo.png" class="img-fluid" alt="lay" style="width:150px;height:100px;">
+            </div>
                 {% for review in five_guys %}
                 <li class="list-group-item d-flex justify-content-between align-items-center">
                     <p>Review by: {{ review['user'] }}</p>
@@ -55,69 +56,188 @@
                     <p>Review: {{ review['text'] }}</p>
                     <p>Wait Time: {{ review['wait'] }}</p>
                     <p>Rating: {{ review['stars'] }}</p>
-                    
                 </li>
-                {% endfor %}
+                {% endfor %}    
           </li>
           <li class="list-group-item d-flex justify-content-between align-items-center">
-            Noodles and Company
+            <b>Noodles and Company</b>
             <div class="image-parent">
                 <img src="/s/noodles_logo.jpeg" class="img-fluid" alt="things" style="width:100px;height:100px;">
+            </div>
+            {% for review in noodles_n_co %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <p>Review by: {{ review['user'] }}</p>
+                <p>Order: {{ review['order'] }}</p>
+                <p>Review: {{ review['text'] }}</p>
+                <p>Wait Time: {{ review['wait'] }}</p>
+                <p>Rating: {{ review['stars'] }}</p>
+            </li>
+            {% endfor %}   
           </li>
           <li class="list-group-item d-flex justify-content-between align-items-center">
-            Roots
+            <b>Roots</b>
             <div class="image-parent">
                 <img src="/s/roots_logo.png" class="img-fluid" alt="things" style="width:120px;height:100px;">
+            </div>
+            {% for review in roots %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <p>Review by: {{ review['user'] }}</p>
+                <p>Order: {{ review['order'] }}</p>
+                <p>Review: {{ review['text'] }}</p>
+                <p>Wait Time: {{ review['wait'] }}</p>
+                <p>Rating: {{ review['stars'] }}</p>
+            </li>
+            {% endfor %}   
           </li>
           <li class="list-group-item d-flex justify-content-between align-items-center">
-            Primanti Bros. Restaurant and Bar
+            <b>Primanti Bros. Restaurant and Bar</b>
             <div class="image-parent">
                 <img src="/s/primantis_logo.png" class="img-fluid" alt="things" style="width:100px;height:100px;">
+            </div>
+            {% for review in primanti %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <p>Review by: {{ review['user'] }}</p>
+                <p>Order: {{ review['order'] }}</p>
+                <p>Review: {{ review['text'] }}</p>
+                <p>Wait Time: {{ review['wait'] }}</p>
+                <p>Rating: {{ review['stars'] }}</p>
+            </li>
+            {% endfor %}   
           </li>
           <li class="list-group-item d-flex justify-content-between align-items-center">
-            The Porch at Schenley
+            <b>The Porch at Schenley</b>
             <div class="image-parent">
                 <img src="/s/porch_logo.jpeg" class="img-fluid" alt="things" style="width:100px;height:100px;">
+            </div>
+            {% for review in the_porch %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <p>Review by: {{ review['user'] }}</p>
+                <p>Order: {{ review['order'] }}</p>
+                <p>Review: {{ review['text'] }}</p>
+                <p>Wait Time: {{ review['wait'] }}</p>
+                <p>Rating: {{ review['stars'] }}</p>
+            </li>
+            {% endfor %}   
           </li>
           <li class="list-group-item d-flex justify-content-between align-items-center">
-            Chikn
+            <b>ChiKN</b>
             <div class="image-parent">
                 <img src="/s/CHiKN_Logo.png" class="img-fluid" alt="things" style="width:100px;height:100px;">
+            </div>
+            {% for review in chikn %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <p>Review by: {{ review['user'] }}</p>
+                <p>Order: {{ review['order'] }}</p>
+                <p>Review: {{ review['text'] }}</p>
+                <p>Wait Time: {{ review['wait'] }}</p>
+                <p>Rating: {{ review['stars'] }}</p>
+            </li>
+            {% endfor %}   
           </li>
           <li class="list-group-item d-flex justify-content-between align-items-center">
-            Piada Italian Street Food
+            <b>Piada Italian Street Food</b>
             <div class="image-parent">
                 <img src="/s/piada_logo.jpeg" class="img-fluid" alt="things" style="width:100px;height:100px;">
+            </div>
+            {% for review in piada %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <p>Review by: {{ review['user'] }}</p>
+                <p>Order: {{ review['order'] }}</p>
+                <p>Review: {{ review['text'] }}</p>
+                <p>Wait Time: {{ review['wait'] }}</p>
+                <p>Rating: {{ review['stars'] }}</p>
+            </li>
+            {% endfor %}   
           </li>
           <li class="list-group-item d-flex justify-content-between align-items-center">
-            Mcdonalds
+            <b>McDonalds</b>>
             <div class="image-parent">
                 <img src="/s/McDonalds-logo.png" class="img-fluid" alt="things" style="width:100px;height:100px;">
+            </div>
+            {% for review in mcdonalds %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <p>Review by: {{ review['user'] }}</p>
+                <p>Order: {{ review['order'] }}</p>
+                <p>Review: {{ review['text'] }}</p>
+                <p>Wait Time: {{ review['wait'] }}</p>
+                <p>Rating: {{ review['stars'] }}</p>
+            </li>
+            {% endfor %}   
           </li>
           <li class="list-group-item d-flex justify-content-between align-items-center">
-            Subway
+            <b>Subway</b>
             <div class="image-parent">
                 <img src="/s/subway-logo.png" class="img-fluid" alt="things" style="width:100px;height:100px;">
+            </div>
+            {% for review in subway %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <p>Review by: {{ review['user'] }}</p>
+                <p>Order: {{ review['order'] }}</p>
+                <p>Review: {{ review['text'] }}</p>
+                <p>Wait Time: {{ review['wait'] }}</p>
+                <p>Rating: {{ review['stars'] }}</p>
+            </li>
+            {% endfor %}   
           </li>
           <li class="list-group-item d-flex justify-content-between align-items-center">
-            Stack'd Oakland
+            <b>Stack'd Oakland</b>
             <div class="image-parent">
                 <img src="/s/stackd-logo.png" class="img-fluid" alt="things" style="width:100px;height:100px;">
+            </div>
+            {% for review in stackd %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <p>Review by: {{ review['user'] }}</p>
+                <p>Order: {{ review['order'] }}</p>
+                <p>Review: {{ review['text'] }}</p>
+                <p>Wait Time: {{ review['wait'] }}</p>
+                <p>Rating: {{ review['stars'] }}</p>
+            </li>
+            {% endfor %}   
           </li>
           <li class="list-group-item d-flex justify-content-between align-items-center">
-            Oishii Bento
+            <b>Oishii Bento</b>
             <div class="image-parent">
                 <img src="/s/oishi-logo.png" class="img-fluid" alt="things" style="width:130px;height:100px;">
+            </div>
+            {% for review in oishii %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <p>Review by: {{ review['user'] }}</p>
+                <p>Order: {{ review['order'] }}</p>
+                <p>Review: {{ review['text'] }}</p>
+                <p>Wait Time: {{ review['wait'] }}</p>
+                <p>Rating: {{ review['stars'] }}</p>
+            </li>
+            {% endfor %}   
           </li>
           <li class="list-group-item d-flex justify-content-between align-items-center">
-            Fuel and Fuddle
+            <b>Fuel and Fuddle</b>
             <div class="image-parent">
                 <img src="/s/fuelfuddle-sitelogo.png" class="img-fluid" alt="things" style="width:130px;height:100px;">
+            </div>
+            {% for review in f_n_f %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <p>Review by: {{ review['user'] }}</p>
+                <p>Order: {{ review['order'] }}</p>
+                <p>Review: {{ review['text'] }}</p>
+                <p>Wait Time: {{ review['wait'] }}</p>
+                <p>Rating: {{ review['stars'] }}</p>
+            </li>
+            {% endfor %}   
           </li>
           <li class="list-group-item d-flex justify-content-between align-items-center">
-            Hello Bistro
+            <b>Hello Bistro</b>
             <div class="image-parent">
                 <img src="/s/hellobistro.png" class="img-fluid" alt="things" style="width:170px;height:100px;">
+            </div>
+            {% for review in hello_bistro %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <p>Review by: {{ review['user'] }}</p>
+                <p>Order: {{ review['order'] }}</p>
+                <p>Review: {{ review['text'] }}</p>
+                <p>Wait Time: {{ review['wait'] }}</p>
+                <p>Rating: {{ review['stars'] }}</p>
+            </li>
+            {% endfor %}   
           </li>
         </ul>
       </div>
@@ -138,7 +258,7 @@ h4 {text-align: center;}
           <option>Primanti Bros. Restaurant and Bar</option>
           <option>The Porch at Schenley</option>
           <option>Chipotle</option>
-          <option>Pamela's Diner</option>
+          <option>Hello Bistro</option>
           <option>Oishii Bento</option>
           <option>Five Guys</option>
           <option>Noodles and Company</option>
