@@ -5,6 +5,7 @@
 .topnav {
   background-color: #003594;
   overflow: hidden;
+  font-weight: bold;
 }
 
 .nav input[type=text]{
