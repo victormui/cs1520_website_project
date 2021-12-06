@@ -2,7 +2,6 @@
 <html>
 <head>
   <title>Add a review</title>
-  <h2> All Reviews </h2>
   <style>
   background-color: #003594
   h2 {text-align: center;}
@@ -25,10 +24,62 @@
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- My Stylesheet -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 
 </head>
 <body>
+  <div class="topnav" id="myTopnav">
+        <a href="home.html" class="active">Home</a>
+        <a href="">All Restaurants</a>
+        <a href="review.html">Reviews</a>
+        <div class="dropdown">
+            <button onclick="dropFunction()" class="dropbtn">
+                   My Account <i class="fa fa-caret-down"></i>
+                 </button>
+             <div id="myDropdown" class="dropdown-content">
+               <a href="login.html">Log Out</a>
+             </div>
+           </div>
+        <div class="search">
+         <form id="search" class="nav" role="search" style="margin:auto;max-width:800px">
+            <input type="text" placeholder="Search..." id="search">
+          <button type="submit"><i class="fa fa-search"></i></button>
+         </form>
+         
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="dropFunction()">&#9776;</a>
+      </div>
+      
+
+    <script>
+        /* When the user clicks on the button,
+        toggle between hiding and showing the dropdown content */
+    function dropFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown menu if the user clicks outside of it
+    window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                 }
+            }
+        }
+    }
+
+
+    function search(string){
+        window.find(string);
+    }
+    </script>
+    <br></br>
+    <h2> All Reviews </h2>
+
   <body style="background-color:white" "border-color:#FFB81C ">
   <div class="container">
     <div class="row">
