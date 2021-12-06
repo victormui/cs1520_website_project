@@ -19,9 +19,7 @@
              </button>
          <div id="myDropdown" class="dropdown-content">
            <a href="all_reviews">Reviews</a>
-           <a href="#">Recents</a>
-           <a href="#">Favorites</a>
-           <a href="#">Settings</a>
+           <a href="logout">Log Out</a>
          </div>
        </div>
     <div class="search">
@@ -78,15 +76,14 @@ function search(string){
     <p>hi</p>
   </div>
 
- <h2>Favorites</h2>
+ <h2>My Favorites</h2>
 
  <div class="favs">
-    <p>This is a list of my favorite restuarants</p>
-    <br></br><br></br>
-    <br></br><br></br>
-    <br></br><br></br>
-    <br></br><br></br>
-    <p>hi</p>
+    {% if no_fav %} {{no_fav}} {% endif %}
+    {% for review in favs %}
+    <p>{{ review['restaurant'] }}</p> <br></br>
+    {% endfor %} 
+    
  </div>
 
 </div>

@@ -12,14 +12,14 @@
     
     <form method="POST" action="/login" id="login" class="input-group">
         <input name="username" type="text" class="input-field" placeholder="Enter Username" required>
-        <input name="password" type="text" class="input-field" placeholder="Enter Password" required>
+        <input name="password" type="password" class="input-field" placeholder="Enter Password" required>
         <button type="submit" class="submit-btn">Log In</button>
     </form>
     
     <form method="POST" action="/sign_up" id="register" class="input-group">
         <input name="username" type="text" class="input-field" placeholder="Enter Username" required>
         <input name="email" type="email" class="input-field" placeholder="Enter E-Mail" required>
-        <input name="password" type="text" class="input-field" placeholder="Enter Password" required>
+        <input name="password" type="password" class="input-field" placeholder="Enter Password" required>
         <button type="submit" class="submit-btn">Register</button>
     </form>
     <p>{% if page_error %} {{page_error}} {% endif %}</p>
@@ -44,6 +44,12 @@
         z.style.left = "0";
     }
  </script>
+ <script>
+    history.pushState(null, null, null);
+    window.addEventListener('popstate', function () {
+        history.pushState(null, null, null);
+    });
+</script>
 
 {% endblock %}
 

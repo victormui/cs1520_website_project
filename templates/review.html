@@ -1,29 +1,35 @@
 {% extends "_base.html" %}
 {% block content %}
 <head>
-  <title>Add a review</title>
-  <h4> All Reviews </h4>
-  <style>
-  h4 {text-align: center;}
-  </style>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-
-    <!-- Bootstrap JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- My Stylesheet -->
-    <link rel="stylesheet" href="/s/review.css">
-
-</head>
+    <title>Add a review</title>
+    <h2> All Reviews </h2>
+    <style>
+    background-color: #003594
+    h2 {text-align: center;}
+    h2{background-color: #003594;}
+    h2{color: #FFB81C;}
+    font-weight: bold;
+    font-size: 100px;
+    </style>
+  
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  
+      <!-- Bootstrap JS -->
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  
+      <!-- Google Fonts -->
+      <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+      <!-- My Stylesheet -->
+      <link rel="stylesheet" href="style.css">
+  
+  </head>
 <body>
+<body style="background-color:white" "border-color:#FFB81C "></body>
   <div class="container">
     <div class="row">
       <div class="col-12 col-sm-50 col-lg-100">
@@ -150,7 +156,7 @@
             {% endfor %}   
           </li>
           <li class="list-group-item d-flex justify-content-between align-items-center">
-            <b>McDonalds</b>>
+            <b>McDonalds</b>
             <div class="image-parent">
                 <img src="/s/McDonalds-logo.png" class="img-fluid" alt="things" style="width:100px;height:100px;">
             </div>
@@ -244,15 +250,16 @@
     </div>
   </div>
   <br></br>
-<h4> Add Review </h4>
+<h2> Add Review </h2>
 <style>
 { padding: 36px; }
-h4 {text-align: center;}
+h2 {text-align: center;}
 </style>
   <form method="POST" action="/add_review">
+    <center>
     <div class="form-group">
         <div class="col-9 col-sm-100 col-lg-100">
-        <label for="restaurantname">Restaurant Name</label>
+        <label for="restaurantname"><b>Restaurant Name</b></label>
         <select class="form-control" name = "restaurant" id="restaurantname">
           <option>Roots</option>
           <option>Primanti Bros. Restaurant and Bar</option>
@@ -269,32 +276,38 @@ h4 {text-align: center;}
           <option>Stack'd Oakland</option>
           <option>Fuel and Fuddle</option>
         </select>
-      </div>
+      
+    </div>
+    </center>
+    <center>
       <div class="form-group">
         <div class="col-9 col-sm-100 col-lg-100">
-        <label for="order">Food Order</label>
+        <label for="order"><b>Food Order</b></label>
         <input type="text" name = "order" class="form-control" id="order" placeholder="What did you order?">
-      </div>
+        
+    </div>
+    </center>
+    <center>
       <div class="form-group">
         <div class="col-9 col-sm-100 col-lg-100">
-        <label for="time">Wait Time</label>
+        <label for="time"><b>Wait Time</b></label>
         <input type="text" name="wait" class="form-control" id="time" placeholder="How long did you wait?">
-      </div>
-      <div class="form-group">
-        <div class="col-9 col-sm-100 col-lg-100">
-        <label for="review">Review</label>
-        <input type="text" name = "user_review" class="form-control" id="review" placeholder="Additional comments?">
-      </div>
+      
+    </div>
+    </center>
       <div class="form-group form-check">
+        
         <div class="col-9 col-sm-100 col-lg-100">
-        <input type="checkbox" class="form-check-input" id="AddFavorites">
-        <label class="form-check-label" for="AddFavorites">Add to Favorites</label>
-      </div>
+        <input type="checkbox" name="favorite" value="checked" class="form-check-input" id="AddFavorites">
+        <label class="form-check-label" for="AddFavorites"><b>Add to Favorites</b></label>
+        
+      
+    </div>
     </form>
+
     
     <div class="container p-3">
       <div class="row">
-    
           <div class="stars text-center">
           <div class="col-md-12">
               <p><b>Rating</b></p>
@@ -316,16 +329,23 @@ h4 {text-align: center;}
               </div>
             </div>
           </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <center>
+              <p style="margin-left:3%;"><b>Review</b></p>
+              <textarea type="text" name = "user_review" id="userReview" placeholder="Add your review..." style="height:100px; width:250px;"></textarea>
+            </center>
+            </div>
+          </div>
           <div class="col-md-12 text-right">
-            <button class="btn btn-primary">Review</button>
+            <button type="submit" class="btn btn-warning btn-lg btn-block"><b>Review</b></button>
           </div>
       </div>
     </div>
-    
-
-    </form>
+</form>
 
 <br></br><br></br>
 
+</body>
 </body>
 {% endblock %}

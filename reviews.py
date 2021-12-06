@@ -7,13 +7,14 @@ def get_client():
     return datastore.Client()
 
 class Review():
-    def __init__(self, user, restaurant, order, wait, stars, text):
+    def __init__(self, user, restaurant, order, wait, stars, text, favorite):
         self.user = user
         self.restaurant = restaurant
         self.order = order
         self.wait = wait
         self.stars = stars
         self.text = text
+        self.favorite = favorite
     
     def get_user(self):
         return '%s' % (self.user)
@@ -27,13 +28,15 @@ class Review():
         return '%s' % (self.stars)
     def get_text(self):
         return '%s' % (self.text)
+    def get_favorite(self):
+        return '%s' % (self.favorite)
 
 class ReviewManager():
     def __init__(self):
         client = get_client()
 
-    def create_review(self, user, rest, order, wait, stars, text):
-        self.add_review( Review(user, rest, order, wait, stars, text) )
+    def create_review(self, user, rest, order, wait, stars, text, favorite):
+        self.add_review( Review(user, rest, order, wait, stars, text, favorite) )
     
     def add_review(self, review):
         client = get_client()
@@ -50,6 +53,15 @@ class ReviewManager():
                 result.append(entity)       
                 
         return result
+    
+    def reviews_filter_favorite(self): 
+        result = []
+        client = get_client()
+        query = client.query(kind='ReviewTest1')
+        for entity in query.fetch():
+            if self.entity_to_fav(entity) == "True":
+                result.append(entity)      
+        return result
 
  
     def review_to_entity(self, review):
@@ -63,6 +75,7 @@ class ReviewManager():
         review_store["wait"] = review.get_wait()
         review_store["stars"] = review.get_stars()
         review_store["text"] = review.get_text()
+        review_store["favorite"] = review.get_favorite()
         return review_store
     
     def entity_to_username(self, review_entity):
@@ -88,6 +101,10 @@ class ReviewManager():
     def entity_to_text(self, review_entity):
         text = review_entity["text"]
         return text
+    
+    def entity_to_fav(self, review_entity):
+        fav = review_entity["favorite"]
+        return fav
     
 
 
