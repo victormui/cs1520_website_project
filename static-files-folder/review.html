@@ -121,7 +121,7 @@ h2 {text-align: center;}
   <div class="form-group">
     <div class="col-9 col-sm-100 col-lg-100">
     <label for="restaurantname"><b>Restaurant Name</b></label>
-    <select class="form-control" id="restaurantname">
+    <select class="form-control" id="restaurantname" style="width: 400px";>
       <option>Roots</option>
       <option>Primanti Bros. Restaurant and Bar</option>
       <option>The Porch at Schenley</option>
@@ -141,12 +141,12 @@ h2 {text-align: center;}
   <div class="form-group">
     <div class="col-9 col-sm-100 col-lg-100">
     <label for="order"><b>Food Order</b></label>
-    <input type="text" class="form-control" id="order" placeholder="What did you order?">
+    <input style="height:40px; width:400px" type="text" class="form-control" id="order" placeholder="What did you order?">
   </div>
   <div class="form-group">
     <div class="col-9 col-sm-100 col-lg-100">
     <label for="time"><b>Wait Time</b></label>
-    <input type="text" class="form-control" id="time" placeholder="How long did you wait?">
+    <input style="height:40px; width:400px" type="text" class="form-control" id="time" placeholder="How long did you wait?">
   </div>
   <div class="form-group form-check">
     <div class="col-9 col-sm-100 col-lg-100">
@@ -156,12 +156,12 @@ h2 {text-align: center;}
 </form>
 </center>
 
-<div class="container p-3">
-  <div class="row">
+<div class="container p-3" style="margin-left:32%;">
+  <div class="row" >
 
       <div class="stars text-center">
       <div class="col-md-12">
-          <p><b>Rating</b></p>
+          <p> <b>Rating</b></p>
           <div class="form-group">
 
             <input type="radio" id="five" name="rate" value="5">
@@ -182,16 +182,16 @@ h2 {text-align: center;}
       <div class="col-md-6">
         <div class="form-group">
           <center>
-          <p style="margin-left:3%;"><b>Review</b></p>
-          <textarea type="text" id="userReview" placeholder="Add your review..." style="height:100px; width:250px;"></textarea>
+          <p><b>Review</b></p>
+          <textarea type="text" id="userReview" placeholder="Add your review..." style="height:150px; width:270px; resize: none;"></textarea>
         </center>
         </div>
       </div>
-      <div class="col-md-12 text-right">
-        <button class="btn btn-warning btn-lg btn-block" onclick="returnReview()"><b>Review</b></button>
-      </div>
   </div>
 </div>
+      <div class="col-md-12 text-center">
+        <button class="btn btn-warning btn-lg " onclick="returnReview()"><b>Review</b></button>
+      </div>
   <script>
       function returnReview(){
         let input = document.getElementById("userReview").value;
