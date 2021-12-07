@@ -31,35 +31,145 @@
 
 </head>
 <body>
-  <div class="topnav" id="myTopnav">
-        <a href="home.html" class="active">Home</a>
-        <a href="home.html/#list">All Restaurants</a>
-        <a href="review.html">Reviews</a>
-        <div class="dropdown">
-            <button onclick="dropFunction()" class="dropbtn">
-                   My Account <i class="fa fa-caret-down"></i>
-                 </button>
-             <div id="myDropdown" class="dropdown-content">
-               <a href="login.html">Log Out</a>
-             </div>
-           </div>
-        <div class="search">
-         <form id="search" class="nav" role="search" style="margin:auto;max-width:800px">
-            <input type="text" placeholder="Search..." id="search">
-          <button type="submit"><i class="fa fa-search"></i></button>
-         </form>
-         
-        </div>
-        <a href="javascript:void(0);" class="icon" onclick="dropFunction()">&#9776;</a>
-      </div>
-      
 
-    <script>
+<html>
+    <head>
+    <style>
+      * {box-sizing: border-box;}
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .topnav {
+        overflow: hidden;
+        background-color: #003594;
+      }
+
+      .topnav a {
+          float: left;
+          display: block;
+          color: #f2f2f2;
+          text-align: center;
+          padding: 16px 30px;
+          text-decoration: none;
+          font-size: 17px;
+}
+
+      .topnav a:hover {
+        background-color:  #FFB81C;
+        color: white;
+      }
+
+      .topnav a.active {
+        background-color: #FFB81C;
+        color: white;
+      }
+
+      .topnav .search- {
+        float: left;
+      }
+
+      .topnav input[type=text] {
+        padding: 6px;
+        margin-top: 8px;
+        font-size: 17px;
+        border: none;
+        width: 500px;
+      }
+
+      .topnav .search button {
+        float: right;
+        padding: 6px 10px;
+        margin-top: 8px;
+        margin-right: 16px;
+        background: #FFB81C;
+        font-size: 17px;
+        border: none;
+        cursor: pointer;
+        color: white;
+      }
+
+      .topnav .search button:hover {
+        background: #003594;
+      }
+
+      @media screen and (max-width: 900px) {
+        .topnav .search {
+          float: none;
+        }
+        .topnav a, .topnav input[type=text], .topnav .search button {
+          float: none;
+          display: block;
+          text-align: left;
+          width: 100%;
+          margin: 0;
+          padding: 14px;
+        }
+        .topnav input[type=text] {
+          border: 1px solid #ccc;  
+        }
+      }
+      </style>
+      </head>
+      <body>
+
+      <div class="topnav">
+        <a href="home.html">Home</a>
+        <a href="home.html/#list">All Restaurants</a>
+        <a href="review.html" class="active">My Reviews</a>
+        <div class="search">
+          <form id="f1" class="nav" role="search" style="margin:auto;max-width:800px" name="search" action="javascript:void()" 
+         onSubmit="if(this.t1.value!=null && this.t1.value!='')
+         parent.findString(this.t1.value);return false;">
+        
+            <input type="text" placeholder="Search.." name="search">
+            <button type="submit"><i class="fa fa-search"></i></button>
+          </form>
+        </div>
+        <a href="javascript:void(0);" onclick="openLink();">I'm Feeling Hungry</a>
+        <a href="login.html">Log Out</a>
+      </div>
+
+      </body>
+      </html>
+
+      <script>
         /* When the user clicks on the button,
         toggle between hiding and showing the dropdown content */
-    function dropFunction() {
-        document.getElementById("myDropdown").classList.toggle("show");
+    var TRange=null;
+
+function findString (str) {
+    if (parseInt(navigator.appVersion)<4) return;
+    var strFound;
+    if (window.find) {
+        strFound=self.find(str);
+        if (!strFound) {
+        strFound=self.find(str,0,1);
+        while (self.find(str,0,1)) continue;
+        }
     }
+    else if (navigator.appName.indexOf("Microsoft")!=-1) {
+
+        if (TRange!=null) {
+        TRange.collapse(false);
+        strFound=TRange.findText(str);
+        if (strFound) TRange.select();
+        }
+        if (TRange==null || strFound==0) {
+            TRange=self.document.body.createTextRange();
+            strFound=TRange.findText(str);
+            if (strFound) TRange.select();
+            }
+        }
+        else if (navigator.appName=="Opera") {
+            alert ("Opera browsers not supported, sorry...")
+        return;
+        }
+        if (!strFound) alert ("String '"+str+"' not found!")
+        return;
+        }
 
     // Close the dropdown menu if the user clicks outside of it
     window.onclick = function(event) {
@@ -80,6 +190,38 @@
         window.find(string);
     }
     </script>
+
+
+
+      <script type="text/javascript">
+      <!--
+      // Create an array of the links to choose from:
+      var links = new Array();
+      links[0] = "https://www.chipotle.com/";
+      links[1] = "https://www.rootsnaturalkitchen.com/address/898-prices-fork-rd-blacksburg-va-24060/?gclid=CjwKCAjwoP6LBhBlEiwAvCcthOwV2bfZA-b1XtIiVuACz_d10FbvG0Lxz3sud8WSgr53-yF4Gf6kdhoCSX0QAvD_BwE";
+      links[2] = "https://locations.primantibros.com/pa/pittsburgh/38002/#menu";
+      links[3] = "https://www.dineattheporch.com/schenley/menu";
+      links[4] = "https://38f5a239-73ea-4e3a-9e0d-aaf50e3061cd.filesusr.com/ugd/fa9060_71868cbbe7974c4ca2c7ff94a55d6273.pdf"
+      links[5] = "https://oishiibento.com/menu/"
+      links[6] = "https://www.fiveguys.com/menu"
+      links[7] = "https://www.noodles.com/menu/"
+      links[8] = "https://www.hotchikn.com/"
+      links[9] = "https://mypiada.com/menu"
+      links[10]= "https://www.mcdonalds.com/us/en-us/full-menu.html"
+      links[11] = "https://www.subway.com/en-US/MenuNutrition/Menu"
+      links[12] = "https://www.stackdburgers.com/oaklandmenu"
+      links[13] = "http://fuelandfuddle.com/newsite/wp-content/uploads/2020/08/20800-FF_Menu-FoodOnly.pdf"
+      links[14] = "https://www.hellobistro.com/menu"
+      function openLink() {
+        // Chooses a random link:
+        var i = Math.floor(Math.random() * links.length);
+        // Directs the browser to the chosen target:
+        parent.location = links[i];
+        return false;
+      }
+      //-->
+      </script>
+
     <br></br>
     <h2> All Reviews </h2>
 
