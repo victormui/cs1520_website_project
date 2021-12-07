@@ -52,7 +52,7 @@
           display: block;
           color: #f2f2f2;
           text-align: center;
-          padding: 16px 30px;
+          padding: 16px 20px;
           text-decoration: none;
           font-size: 17px;
 }
@@ -67,35 +67,37 @@
         color: white;
       }
 
-      .topnav .search- {
+      .topnav .search {
         float: left;
       }
 
       .topnav input[type=text] {
-        padding: 6px;
-        margin-top: 8px;
-        font-size: 17px;
-        border: none;
-        width: 500px;
-      }
+  padding: 14px;
+  font-size: 17px;
+  border-color: #003594;
+  border-style: solid;
+  float: left;
+  width: 500px;
+  background: white;
+}
 
-      .topnav .search button {
-        float: right;
-        padding: 6px 10px;
-        margin-top: 8px;
-        margin-right: 16px;
-        background: #FFB81C;
-        font-size: 17px;
-        border: none;
-        cursor: pointer;
-        color: white;
-      }
-
+      .topnav .search button 
+      {
+  float: right;
+  width: 10%;
+  padding: 16px;
+  background: #FFB81C;
+  color: white;
+  font-size: 17px;
+  border: none;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer;
+}
       .topnav .search button:hover {
         background: #003594;
       }
 
-      @media screen and (max-width: 900px) {
+      @media screen and (max-width: 600px) {
         .topnav .search {
           float: none;
         }
@@ -119,17 +121,16 @@
         <a href="home.html">Home</a>
         <a href="home.html/#list">All Restaurants</a>
         <a href="review.html" class="active">My Reviews</a>
+        <a href="javascript:void(0);" onclick="openLink();">I'm Feeling Hungry</a>
+        <a href="login.html">Log Out</a>
         <div class="search">
-          <form id="f1" class="nav" role="search" style="margin:auto;max-width:800px" name="search" action="javascript:void()" 
-         onSubmit="if(this.t1.value!=null && this.t1.value!='')
-         parent.findString(this.t1.value);return false;">
-        
-            <input type="text" placeholder="Search.." name="search">
+          <form id="f1" class="nav" role="search" name="search" action="javascript:void()"onSubmit="if(this.t1.value!=null && this.t1.value!='') 
+          parent.findString(this.t1.value);return false;">
+
+            <input type="text" id="t1" name="t1" placeholder="Search..." id="search">
             <button type="submit"><i class="fa fa-search"></i></button>
           </form>
         </div>
-        <a href="javascript:void(0);" onclick="openLink();">I'm Feeling Hungry</a>
-        <a href="login.html">Log Out</a>
       </div>
 
       </body>
@@ -140,7 +141,7 @@
         toggle between hiding and showing the dropdown content */
     var TRange=null;
 
-function findString (str) {
+    function findString (str) {
     if (parseInt(navigator.appVersion)<4) return;
     var strFound;
     if (window.find) {
@@ -171,31 +172,8 @@ function findString (str) {
         return;
         }
 
-    // Close the dropdown menu if the user clicks outside of it
-    window.onclick = function(event) {
-        if (!event.target.matches('.dropbtn')) {
-            var dropdowns = document.getElementsByClassName("dropdown-content");
-            var i;
-            for (i = 0; i < dropdowns.length; i++) {
-                var openDropdown = dropdowns[i];
-                if (openDropdown.classList.contains('show')) {
-                    openDropdown.classList.remove('show');
-                 }
-            }
-        }
-    }
 
-
-    function search(string){
-        window.find(string);
-    }
-    </script>
-
-
-
-      <script type="text/javascript">
-      <!--
-      // Create an array of the links to choose from:
+        // Create an array of the links to choose from:
       var links = new Array();
       links[0] = "https://www.chipotle.com/";
       links[1] = "https://www.rootsnaturalkitchen.com/address/898-prices-fork-rd-blacksburg-va-24060/?gclid=CjwKCAjwoP6LBhBlEiwAvCcthOwV2bfZA-b1XtIiVuACz_d10FbvG0Lxz3sud8WSgr53-yF4Gf6kdhoCSX0QAvD_BwE";
@@ -219,11 +197,14 @@ function findString (str) {
         parent.location = links[i];
         return false;
       }
-      //-->
-      </script>
+
+    </script>
+
+
+
 
     <br></br>
-    <h2> All Reviews </h2>
+    <h2><b> All Reviews</b> </h2>
 
   <body style="background-color:white" "border-color:#FFB81C ">
   <div class="container">
@@ -307,7 +288,7 @@ function findString (str) {
   </div>
   <br></br>
 
-<h2> Add Review </h2>
+<h2><b> Add Review</b></h2>
 <style>
 { padding: 36px; }
 h2 {text-align: center;}
