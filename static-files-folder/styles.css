@@ -107,13 +107,6 @@ font-weight: bold;
     display:none;
   }
 
-  hr{
-    width: 100%;
-    margin-left:auto;
-    margin-right: auto;
-    height: 60px;
-    background-color:#003594;
-  }
 
   .center{
     position: absolute;
