@@ -1,4 +1,4 @@
-import datetime
+from datetime import datetime
 import flask
 import user
 import reviews
@@ -46,16 +46,23 @@ def add_reviews():
         return redirect(url_for('route'))
     user = session['user']
     restaurant = flask.request.form['restaurant']
+    print("R S")
     order = flask.request.form['order']
+    print("O S")
     wait = flask.request.form['wait']
+    print("W S")
     rating = flask.request.form['rate']
+    print("RA S")
     text = flask.request.form['user_review']
+    print("U S")
     favorite = flask.request.form['favorite']
+    print("F S")
 
-    if favorite != "checked":
-        review_m.create_review(user, restaurant, order, wait, rating, text, False)
-    else:
+
+    if favorite == "true":
         review_m.create_review(user, restaurant, order, wait, rating, text, True)
+    else:
+        review_m.create_review(user, restaurant, order, wait, rating, text, False)
 
     return redirect(url_for('render_reviews'))
 
@@ -102,11 +109,17 @@ def home_page():
     if not session:
         return redirect(url_for('route'))
         
-    get_favorited = review_m.reviews_filter_favorite()
-    if not get_favorited:
-        return flask.render_template('home.html',no_fav = "No restaurants favorited")
-        
-    return flask.render_template('home.html', favs = get_favorited)
+    get_favorited = review_m.reviews_filter_favorite(session['user'])
+    get_recent = review_m.reviews_filter_recent(session['user'])
+
+    if not get_favorited and not get_recent:
+        return flask.render_template('home.html',no_fav = "No restaurants favorited", no_recent = "No recent restaurants")
+    elif not get_recent:
+        return flask.render_template('home.html',no_recent = "No recent restaurants", favs = get_favorited)
+    elif not get_favorited:
+        return flask.render_template('home.html',no_fav = "No restaurants favorited", recent = get_recent)
+
+    return flask.render_template('home.html', favs = get_favorited, recent = get_recent)
 
 @app.route("/logout", methods=['GET', 'POST'])
 def logout():

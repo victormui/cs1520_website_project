@@ -2,7 +2,6 @@
 {% block content %}
 <head>
     <title>Add a review</title>
-    <h2> All Reviews </h2>
     <style>
     background-color: #003594
     h2 {text-align: center;}
@@ -25,10 +24,63 @@
       <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
       <!-- My Stylesheet -->
-      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="styles.css">
+
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   
   </head>
 <body>
+    <div class="topnav" id="myTopnav">
+        <a href="home" class="active">Home</a>
+        <a href="">All Restaurants</a>
+        <a href="all_reviews">Reviews</a>
+        <div class="dropdown">
+            <button onclick="dropFunction()" class="dropbtn">
+                   My Account <i class="fa fa-caret-down"></i>
+                 </button>
+             <div id="myDropdown" class="dropdown-content">
+               <a href="log_out">Log Out</a>
+             </div>
+           </div>
+        <div class="search">
+         <form id="search" class="nav" role="search" style="margin:auto;max-width:800px">
+            <input type="text" placeholder="Search..." id="search">
+          <button type="submit"><i class="fa fa-search"></i></button>
+         </form>
+         
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="dropFunction()">&#9776;</a>
+      </div>
+      
+
+    <script>
+        /* When the user clicks on the button,
+        toggle between hiding and showing the dropdown content */
+    function dropFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown menu if the user clicks outside of it
+    window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                 }
+            }
+        }
+    }
+
+
+    function search(string){
+        window.find(string);
+    }
+    </script>
+    <br></br>
+    <h2> All Reviews </h2>
 <body style="background-color:white" "border-color:#FFB81C "></body>
   <div class="container">
     <div class="row">
@@ -260,7 +312,7 @@ h2 {text-align: center;}
     <div class="form-group">
         <div class="col-9 col-sm-100 col-lg-100">
         <label for="restaurantname"><b>Restaurant Name</b></label>
-        <select class="form-control" name = "restaurant" id="restaurantname">
+        <select class="form-control" name = "restaurant" id="restaurantname" style="width: 400px";>
           <option>Roots</option>
           <option>Primanti Bros. Restaurant and Bar</option>
           <option>The Porch at Schenley</option>
@@ -276,38 +328,48 @@ h2 {text-align: center;}
           <option>Stack'd Oakland</option>
           <option>Fuel and Fuddle</option>
         </select>
-      
-    </div>
+    
+</div>
     </center>
     <center>
       <div class="form-group">
         <div class="col-9 col-sm-100 col-lg-100">
         <label for="order"><b>Food Order</b></label>
-        <input type="text" name = "order" class="form-control" id="order" placeholder="What did you order?">
+        <input style="height:40px; width:400px" type="text" name = "order" class="form-control" id="order" placeholder="What did you order?">
         
-    </div>
+    
+</div>
     </center>
     <center>
       <div class="form-group">
         <div class="col-9 col-sm-100 col-lg-100">
         <label for="time"><b>Wait Time</b></label>
-        <input type="text" name="wait" class="form-control" id="time" placeholder="How long did you wait?">
+        <input style="height:40px; width:400px" type="text" name="wait" class="form-control" id="time" placeholder="How long did you wait?">
       
+    
     </div>
     </center>
-      <div class="form-group form-check">
+    
+    <center>
+    <div class="form-group form-check">
         
         <div class="col-9 col-sm-100 col-lg-100">
-        <input type="checkbox" name="favorite" value="checked" class="form-check-input" id="AddFavorites">
+        <input type="checkbox" name="favorite" value="true" class="form-check-input" id="AddFavorites">
+        <input type='hidden' value='false' class="form-check-input"name='favorite' id='checkHidden'>
         <label class="form-check-label" for="AddFavorites"><b>Add to Favorites</b></label>
         
-      
+    
     </div>
-    </form>
+    </center>
 
     
-    <div class="container p-3">
+
+
+
+    
+    <div class="container p-3" style="margin-left:24%;">
       <div class="row">
+          
           <div class="stars text-center">
           <div class="col-md-12">
               <p><b>Rating</b></p>
@@ -332,16 +394,17 @@ h2 {text-align: center;}
           <div class="col-md-6">
             <div class="form-group">
               <center>
-              <p style="margin-left:3%;"><b>Review</b></p>
-              <textarea type="text" name = "user_review" id="userReview" placeholder="Add your review..." style="height:100px; width:250px;"></textarea>
+              <p><b>Review</b></p>
+              <textarea type="text" name = "user_review" id="userReview" placeholder="Add your review..." style="height:150px; width:270px; resize: none;"></textarea>
             </center>
             </div>
           </div>
-          <div class="col-md-12 text-right">
-            <button type="submit" class="btn btn-warning btn-lg btn-block"><b>Review</b></button>
-          </div>
       </div>
+      
     </div>
+    <div class="col-md-12 text-center">
+        <button type="submit" class="btn btn-warning btn-lg "><b>Leave Review</b></button>
+      </div>
 </form>
 
 <br></br><br></br>

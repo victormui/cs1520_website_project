@@ -1,4 +1,4 @@
-import datetime
+from datetime import datetime
 import flask
 from google.cloud import datastore
 from flask import request
@@ -7,7 +7,7 @@ def get_client():
     return datastore.Client()
 
 class Review():
-    def __init__(self, user, restaurant, order, wait, stars, text, favorite):
+    def __init__(self, user, restaurant, order, wait, stars, text, favorite, time = None):
         self.user = user
         self.restaurant = restaurant
         self.order = order
@@ -15,6 +15,7 @@ class Review():
         self.stars = stars
         self.text = text
         self.favorite = favorite
+        self.time = datetime.now()
     
     def get_user(self):
         return '%s' % (self.user)
@@ -30,6 +31,10 @@ class Review():
         return '%s' % (self.text)
     def get_favorite(self):
         return '%s' % (self.favorite)
+    def get_time(self):
+        """Return this messages's time as a 'YYYYMMDD HH:MM:SS' string."""
+        return self.time.strftime('%Y%m%d %H:%M:%S')
+
 
 class ReviewManager():
     def __init__(self):
@@ -54,13 +59,30 @@ class ReviewManager():
                 
         return result
     
-    def reviews_filter_favorite(self): 
+    def reviews_filter_recent(self, user):
         result = []
         client = get_client()
         query = client.query(kind='ReviewTest1')
+
         for entity in query.fetch():
-            if self.entity_to_fav(entity) == "True":
+            if self.entity_to_username(entity) == user:
+                result.append(entity)       
+        
+        #sortedArray = sorted(result,key=lambda x: datetime.strptime(x['time'], '%m/%d/%y %H:%M'), reverse=True)
+        #for entity in sortedArray:
+        #    print(entity['restaurant'])
+        result.reverse()
+        return result
+    
+    def reviews_filter_favorite(self, user): 
+        result = []
+        check_rest = []
+        client = get_client()
+        query = client.query(kind='ReviewTest1')
+        for entity in query.fetch():
+            if self.entity_to_fav(entity) == "True" and self.entity_to_username(entity) == user and self.entity_to_restaurant(entity) not in check_rest:
                 result.append(entity)      
+                check_rest.append( self.entity_to_restaurant(entity) )
         return result
 
  
@@ -76,6 +98,7 @@ class ReviewManager():
         review_store["stars"] = review.get_stars()
         review_store["text"] = review.get_text()
         review_store["favorite"] = review.get_favorite()
+        review_store["time"] = review.get_time()
         return review_store
     
     def entity_to_username(self, review_entity):
@@ -106,6 +129,9 @@ class ReviewManager():
         fav = review_entity["favorite"]
         return fav
     
+    def entity_to_time(self, review_entity):
+        time = review_entity["time"]
+        return time
 
 
     
