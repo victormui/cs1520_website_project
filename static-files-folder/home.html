@@ -21,8 +21,11 @@
              </div>
            </div>
         <div class="search">
-         <form id="search" class="nav" role="search" style="margin:auto;max-width:800px">
-            <input type="text" placeholder="Search..." id="search">
+         <form id="f1" class="nav" role="search" style="margin:auto;max-width:800px" name="search" action="javascript:void()" 
+         onSubmit="if(this.t1.value!=null && this.t1.value!='')
+         parent.findString(this.t1.value);return false;">
+        
+            <input type="text" id="t1" name="t1" placeholder="Search..." id="search">
           <button type="submit"><i class="fa fa-search"></i></button>
          </form>
          
@@ -37,6 +40,38 @@
     function dropFunction() {
         document.getElementById("myDropdown").classList.toggle("show");
     }
+    var TRange=null;
+
+function findString (str) {
+    if (parseInt(navigator.appVersion)<4) return;
+    var strFound;
+    if (window.find) {
+        strFound=self.find(str);
+        if (!strFound) {
+        strFound=self.find(str,0,1);
+        while (self.find(str,0,1)) continue;
+        }
+    }
+    else if (navigator.appName.indexOf("Microsoft")!=-1) {
+
+        if (TRange!=null) {
+        TRange.collapse(false);
+        strFound=TRange.findText(str);
+        if (strFound) TRange.select();
+        }
+        if (TRange==null || strFound==0) {
+            TRange=self.document.body.createTextRange();
+            strFound=TRange.findText(str);
+            if (strFound) TRange.select();
+            }
+        }
+        else if (navigator.appName=="Opera") {
+            alert ("Opera browsers not supported, sorry...")
+        return;
+        }
+        if (!strFound) alert ("String '"+str+"' not found!")
+        return;
+        }
 
     // Close the dropdown menu if the user clicks outside of it
     window.onclick = function(event) {
