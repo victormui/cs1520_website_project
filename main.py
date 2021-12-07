@@ -126,6 +126,12 @@ def logout():
     session.clear()
     return redirect(url_for('route'))
 
+@app.route("/reviews", methods=['GET', 'POST'])
+def get_specific_review():
+    if not session:
+        return redirect(url_for('route'))
+    restaurant = flask.request.form['restaurant']
+
 
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=8080, debug=True)
